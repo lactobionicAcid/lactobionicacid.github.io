@@ -8,7 +8,9 @@ subtitle: '也许是一个博客…？'
 description: 'lactobionicAcid (aka. 乳糖酸ちゃん) 的一个小博客。'
 keywords: Hexo, lactobionicAcid, '乳糖酸ちゃん', '乳糖酸酱'
 author: lactobionicAcid
-language: zh
+language:
+  - zh-CN
+  - en  
 timezone: 'Asia/Shanghai'
 
 # URL
