@@ -216,9 +216,8 @@ navbar:
     About: 
       icon: fa-regular fa-user
       submenus:
-        Me: /about
-        Github: https://github.com/EvanNotFound/hexo-theme-redefine
-        Blog: https://ohevan.com
+        "这个博客": /about
+        Github: https://github.com/lactobionicAcid/lactobionicacid.github.io
         Friends: /friends
     "PCL 主页状态":
       path: /PCL-Homepage-Status

@@ -1,0 +1,6 @@
+- links_category: Normal
+  has_thumbnail: false
+  list:
+    - name: GitHub
+      link: https://github.com
+      avatar: https://github.com/favicon.ico
