@@ -1,4 +1,5 @@
 ---
+license: cc_by_nc
 title: PCL 启动器主题解锁教程
 abbrlink: sp-1
 date: 2024-11-10 03:37:00
