@@ -123,3 +123,12 @@ mathjax:
 
 # All minifier
 all_minifier: true
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false
+  exclude: webp
