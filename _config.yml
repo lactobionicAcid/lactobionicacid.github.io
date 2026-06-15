@@ -131,4 +131,5 @@ image_minifier:
   pngquant: false
   progressive: false
   silent: false
-  exclude: webp
+  exclude: 
+    - '*.webp'
