@@ -12,23 +12,38 @@
     "version": "8.1.2"
   },
   "dependencies": {
+    "cwebp": "^3.2.0",
+    "gifsicle": "^7.0.1",
+    "gulp-imagemin": "^9.2.0",
     "hexo": "^8.0.0",
     "hexo-abbrlink": "^2.2.1",
+    "hexo-all-minifier": "^0.5.7",
+    "hexo-filter-mathjax": "^0.9.1",
+    "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",
     "hexo-generator-searchdb": "^1.5.0",
     "hexo-generator-tag": "^2.0.0",
+    "hexo-minify": "^1.8.1",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^7.0.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-redefine": "^2.9.0",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "node-gyp": "^13.0.0"
   },
   "allowScripts": {
     "hexo-util@3.3.0": true,
-    "hexo-util@4.0.0": true
+    "hexo-util@4.0.0": true,
+    "jpegtran-bin@5.0.2": true,
+    "optipng-bin@7.0.1": true,
+    "cwebp-bin@6.1.2": true,
+    "ttf2woff2@4.0.5": true,
+    "mozjpeg@8.0.0": true,
+    "pngquant-bin@5.0.2": true,
+    "gifsicle@7.0.1": true
   }
 }
