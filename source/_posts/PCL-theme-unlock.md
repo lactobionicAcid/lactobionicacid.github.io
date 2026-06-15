@@ -277,7 +277,7 @@ excerpt: 始于 2024 年，这篇文章详细讲述了如何解锁 PCL 的各个
 &nbsp;
 
 
-### <div style="color: #27459C;">「宇宙的终极答案」</div>
+### <div style="color: #27459C;">星空蓝</div>
 
 ![image](theme-42.png)
 
