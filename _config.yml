@@ -122,7 +122,6 @@ mathjax:
   every_page: false # if true, every page will be rendered by mathjax regardless the `mathjax` setting in Front-matter of each article
 
 # All minifier
-#all_minifier: true
 js_concator:
   enable: false
   bundle_path: '/js/bundle.js'
@@ -151,7 +150,7 @@ js_minifier:
     - '*.min.js'
 
 image_minifier:
-  enable: false
+  enable: true
   interlaced: false
   multipass: false
   optimizationLevel: 2
@@ -159,4 +158,4 @@ image_minifier:
   progressive: false
   silent: true
   exclude: 
-    - '*.webp'
+    - '**/*.webp'
