@@ -133,3 +133,14 @@ image_minifier:
   silent: true
   exclude:
     - '202606/a12a/picture.jpg'
+
+# Sitemap
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  template: ./sitemap_template.xml
+  template_txt: ./sitemap_template.txt
+  rel: true
+  tags: true
+  categories: true
