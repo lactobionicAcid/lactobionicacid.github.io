@@ -123,3 +123,5 @@ mathjax:
 
 # All minifier
 all_minifier: true
+image_minifier:
+  silent: true
