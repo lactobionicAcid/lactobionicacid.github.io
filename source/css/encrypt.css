@@ -4,7 +4,7 @@
     overflow: hidden;
     margin: 20px 0;
     background: var(--card-bg);
-    box-shadow: var(--redefine-box-shadow);
+    box-shadow: var(--redefine-box-shadow) !important;
     border: 1px solid var(--card-border);
     transition: all 0.3s ease;
     border-radius: 18px;
@@ -55,6 +55,21 @@
     
 }
 
+@media (max-width: 867px) {
+  .decrypt-btn {
+    width: 100%
+  }
+}
+@media (max-width: 768px) {
+  .decrypt-btn {
+    width: auto
+  }
+}
+@media (max-width: 514px) {
+  .decrypt-btn {
+    width: 100%
+  }
+}
 
 /* ===== 解密结果区域 ===== */
 .decrypt-result {

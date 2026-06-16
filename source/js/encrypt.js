@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isAutoDecrypt) {
           showHint(block, '以下内容将在 3 天内保持解密状态。', 'fa-solid fa-unlock');
         } else {
-          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。', 'fa-solid fa-unlock', 'success');
+          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。', 'fa-solid fa-lock-open', 'success');
         }
 
       } catch (error) {

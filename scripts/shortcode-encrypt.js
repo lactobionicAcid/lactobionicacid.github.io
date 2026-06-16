@@ -12,7 +12,7 @@ hexo.extend.tag.register('encrypt', (args, content) => {
     <div class="encrypt-input-group">
         <p style="width: 100%; margin-bottom: 0;"><i class="fa-solid fa-lock"></i>&ensp;以下内容受密码保护。</p>
         <input type="password" placeholder="输入密码……" class="encrypt-input">
-        <button type="button" class="decrypt-btn">🔑 查看内容</button>
+        <button type="button" class="decrypt-btn"><i class="fa-solid fa-key"></i>&ensp;查看内容</button>
     </div>
     <div class="decrypt-result">
       <div class="decrypted-content"></div>
