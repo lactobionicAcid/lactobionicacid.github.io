@@ -19,7 +19,7 @@ url: https://lactobionicacid.github.io/
 root: /
 permalink: :year:month/:abbrlink/
 abbrlink:
-  alg: md5
+  alg: crc16
   rep: hex
 permalink_defaults:
 pretty_urls:
@@ -123,5 +123,13 @@ mathjax:
 
 # All minifier
 all_minifier: true
+html_minifier:
+  silent: true
+css_minifier:
+  silent: true
+js_concator:
+  silent: true
 image_minifier:
   silent: true
+  exclude:
+    - '202606/a12a/picture.jpg'

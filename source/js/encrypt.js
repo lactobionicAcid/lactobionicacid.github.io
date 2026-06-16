@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resultArea.innerHTML = DOMPurify.sanitize(marked.parse(actualContent));
         block.classList.add('decrypted');
         
-        // 存储密码到本地（有效期7天）
+        // 存储密码到本地
         if (!isAutoDecrypt) {
           const storageKey = `hexo-encrypt-${block.dataset.encrypted}`;
           const expireTime = Date.now() + 3 * 86400000;
@@ -132,9 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 添加自动解密提示
         if (isAutoDecrypt) {
-          showHint(block, '以下内容将在 3 天内保持解密状态。', 'fa-solid fa-circle-info');
+          showHint(block, '以下内容将在 3 天内保持解密状态。', 'fa-solid fa-unlock');
         } else {
-          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。', 'fa-solid fa-circle-check', 'success');
+          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。', 'fa-solid fa-unlock', 'success');
         }
 
       } catch (error) {

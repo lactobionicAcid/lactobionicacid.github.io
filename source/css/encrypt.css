@@ -87,7 +87,7 @@
   }
 }
   
-/* ===== 解密内容Markdown样式 ===== */
+/* ===== 解密内容Markdown样式 ===== *//*
 .decrypted-content * {
   color: var(--text-color) !important;
   margin-bottom: 10px;
@@ -203,3 +203,4 @@
   margin: 16px 0;
   display: block;
 }
+*/
