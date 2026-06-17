@@ -435,13 +435,13 @@ inject:
   enable: true
   # Inject custom head html code
   head: 
-    - <link rel="stylesheet" href="/css/encrypt.css">
+    - <link rel="stylesheet" href="/css/decrypt.css">
   # Inject custom footer html code
   footer:
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     - <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"></script>
-    - <script src="/js/encrypt.js"></script>
+    - <script src="/js/decrypt.js"></script>
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
