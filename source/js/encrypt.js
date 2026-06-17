@@ -132,11 +132,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 添加自动解密提示
         if (isAutoDecrypt) {
-          showHint(block, '以下内容将在 3 天内保持解密状态。', 'fa-solid fa-unlock');
+          showHint(block, '以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-unlock');
         } else {
-          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。', 'fa-solid fa-lock-open', 'success');
+          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-lock-open', 'success');
         }
-
+        document.body.addEventListener('click', function(e) {
+          if (e.target.classList.contains('clear')) {
+            localStorage.removeItem(`hexo-encrypt-${e.target.closest('.encrypted-block').dataset.encrypted}`);
+            location.reload(true);
+          }
+        });
       } catch (error) {
         showHint(block, '密码错误！请重试。', 'fa-solid fa-circle-xmark', 'danger');
       }
