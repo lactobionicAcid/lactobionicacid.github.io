@@ -3241,6 +3241,14 @@ optipng-bin@^7.0.0:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.0"
 
+optipng-bin@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.npmjs.org/optipng-bin/-/optipng-bin-9.0.0.tgz"
+  integrity sha512-uDcmcNK4MRSM5ezLThUPI7fc9ZxlQMqnxhWxIc7foCcUZZ2LvzbcJwwVEsU78tC3t9B68dwE4y/m6at10Z93UA==
+  dependencies:
+    bin-build "^3.0.0"
+    bin-wrapper "^4.0.0"
+
 os-filter-obj@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/os-filter-obj/-/os-filter-obj-2.0.0.tgz"
