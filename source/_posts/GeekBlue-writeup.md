@@ -32,7 +32,7 @@ excerpt: 与极客蓝相关的解密 WRITEUP。部分内容需要使用密码访
 初始线索。
 
 {% callout %}
-gnp.dorC61\60\20\0202\moc.x1xa.2s\\:sptth
+gnp.dorC61\60\20\0202\moc.x1xa.2s\\\\:sptth
 {% endcallout %}
 
 不难看出，这是一个被倒序后的 HTTPS 链接。
