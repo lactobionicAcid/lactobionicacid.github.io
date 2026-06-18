@@ -133,6 +133,7 @@ image_minifier:
   silent: true
   exclude:
     - '202606/a12a/picture.jpg'
+    - '202606/a12a/gnp.erutcip.gif'
 
 # Sitemap
 sitemap:
