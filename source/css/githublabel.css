@@ -1,0 +1,43 @@
+.github_label {
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 624.938rem;
+    font-family: inherit;
+    font-weight: 550;
+    white-space: nowrap;
+    align-items: center;
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: .75rem;
+    height: 1.25rem;
+    width: auto;
+    --perceived-lightness: calc(var(--label-r)*.2126/255 + var(--label-g)*.7152/255 + var(--label-b)*.0722/255);
+    --lightness-switch: max(0,min(calc(1/(var(--lightness-threshold) - var(--perceived-lightness))),1));
+    border-style: solid;
+    border-width: .0625rem;
+    position: relative;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+/* 亮色主题应用的样式 */
+.light-mode .github_label {
+    --lightness-threshold: .453;
+    --border-threshold: .96;
+    --border-alpha: max(0, min(calc((var(--perceived-lightness) - var(--border-threshold)) * 100), 1));
+    background: rgb(var(--label-r), var(--label-g), var(--label-b));
+    color: hsl(0deg, 0%, calc(100% * var(--lightness-switch)));
+    border-color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) - 25) * 1%), var(--border-alpha));
+}
+
+/* 暗色主题应用的样式 */ 
+.dark-mode .github_label {
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+    --lightness-threshold: .6;
+    --background-alpha: .18;
+    --border-alpha: 0.3;
+    background: rgb(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha));
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%));
+    border-color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha));
+}

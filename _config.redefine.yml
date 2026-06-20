@@ -443,7 +443,7 @@ inject:
   # Inject custom head html code
   head: 
     - <link rel="stylesheet" href="/css/decrypt.css">
-    - <link rel="stylesheet" href="/css/chore.css">
+    - <link rel="stylesheet" href="/css/githublabel.css">
   # Inject custom footer html code
   footer:
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>

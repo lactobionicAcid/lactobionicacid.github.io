@@ -28,34 +28,6 @@ excerpt: 始于 2024 年，这篇文章详细讲述了如何解锁 PCL 的各个
         0% { background-position: 0; }
         100% { background-position: -24000px; }
     }
-
-    /* 与 GitHub 相关的标签样式 */
-    .github_tag {
-        box-sizing: border-box;
-        border-radius: var(--borderRadius-full,624.938rem);
-        font-family: inherit;
-        font-weight: var(--base-text-weight-semibold,600);
-        white-space: nowrap;align-items: center;
-        line-height: 1;
-        text-decoration: none;
-        display: inline-flex;
-        font-size: var(--text-body-size-small,.75rem);
-        height: var(--base-size-20,1.25rem);
-        width: auto;
-        --perceived-lightness: calc(var(--label-r)*.2126/255 + var(--label-g)*.7152/255 + var(--label-b)*.0722/255);
-        --lightness-switch: max(0,min(calc(1/(var(--lightness-threshold) - var(--perceived-lightness))),1));
-        border-style: solid;
-        border-width: var(--borderWidth-thin,.0625rem);
-        position: relative;
-        --lightness-threshold: .453;
-        --border-threshold: .96;
-        --border-alpha: max(0,min(calc((var(--perceived-lightness) - var(--border-threshold))*100),1));
-        background: rgb(var(--label-r),var(--label-g),var(--label-b));
-        border-color: hsl(var(--label-h),calc(var(--label-s)*1%),calc((var(--label-l) - 25)*1%),var(--border-alpha));
-        color: hsl(0deg,0%,calc(100%*var(--lightness-switch)));
-        padding-left: .5rem;
-        padding-right: .5rem;
-    }
 </style>
 
 
@@ -212,7 +184,7 @@ excerpt: 始于 2024 年，这篇文章详细讲述了如何解锁 PCL 的各个
 
 即隐藏主题第 2 行第 2 个主题，亦作为**对 PCL 作出贡献的奖励**。~~前提是你可以流畅访问 GitHub~~
 
-在**由你提交**且被标记为&#32;<spam class="github_tag" style="--label-r: 14; --label-g: 138; --label-b: 22; --label-h: 124; --label-s: 82; --label-l: 30;">完成</spam>&#32;的 Pull Request、主页预设投稿，或带&#32;<spam class="github_tag" style="--label-r: 254;--label-g: 250;--label-b: 250;--label-h: 0;--label-s: 67;--label-l: 99;">· Bug</spam>&#32;<spam class="github_tag" style="--label-r: 14; --label-g: 138; --label-b: 22; --label-h: 124; --label-s: 82; --label-l: 30;">完成</spam>&#32;标签的 Issue 的评论区下，回复你的 PCL 识别码，即可获得土豆码。点击 `输入土豆码`，将你获得的土豆码复制粘贴过去，然后点击 `确定`。
+当**由你提交**的 Pull Request、主页预设投稿 或带有&#32;{%githublabel "· Bug" 254 250 250 0 67 99 %}&#32;标签的 Issue 被处理完成（带有 &#32;{%githublabel "完成" 14 138 22 124 82 30 %}&#32;标签）时，在其评论区下回复你的 PCL 识别码，即可获得土豆码。点击 `输入土豆码`，将你获得的土豆码复制粘贴过去，然后点击 `确定`。
 
 <span style="opacity: .50; ">此前，活跃橙还可在 LTW3 服务器中用 3 个金块购买，现已失效。</span>
 
