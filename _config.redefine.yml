@@ -188,6 +188,8 @@ home_banner:
     qrs:
       - icon: qq
         qr: /images/datamatrix_qq.png
+      - icon: fa-solid fa-share-nodes
+        qr: /images/datamatrix_this_site.png
 # HOME BANNER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -209,19 +211,21 @@ navbar:
   links:
     Home: 
       path: / 
-      icon: fa-regular fa-house # can be empty
+      icon: fa-regular fa-house
     Archives: 
       path: /archives 
-      icon: fa-regular fa-archive # can be empty
+      icon: fa-regular fa-archive
     About: 
       icon: fa-regular fa-user
       submenus:
         "这个博客": /about
-        Github: https://github.com/lactobionicAcid/lactobionicacid.github.io
-        Friends: /friends
+        "源代码": https://github.com/lactobionicAcid/lactobionicacid.github.io
+    Friends:
+      path: /friends
+      icon: fa-regular fa-user-group
     "PCL 主页状态":
       path: /PCL-Homepage-Status
-      icon: fa-solid fa-arrow-up-right-from-square
+      icon: fa-regular fa-arrow-up-right-from-square
     # Status: 
     #   path: https://status.ohevan.com/
     #   icon: fa-regular fa-chart-bar
@@ -248,20 +252,22 @@ home:
   sidebar:
     enable: true # Whether to enable sidebar
     position: left # Sidebar position. left, right
-    first_item: menu # First item in sidebar. menu, info
-    announcement: # Announcement text
+    first_item: info # First item in sidebar. menu, info
+    announcement: '<i class="fa-solid fa-person-digging"></i> 本博客正在装修中' # Announcement text
     show_on_mobile: true # Whether to show sidebar navigation on mobile sheet menu
     links:
-      # Archives: 
-      #   path: /archives 
-      #   icon: fa-regular fa-archive # can be empty
-      # Tags: 
-      #   path: /tags 
-      #   icon: fa-regular fa-tags # can be empty
-      # Categories: 
-      #   path: /categories 
-      #   icon: fa-regular fa-folder # can be empty
-      # ...... # you can add more
+      音乐:
+        path: /music
+        icon: fa-regular fa-compact-disc
+      归档: 
+        path: /archives 
+        icon: fa-regular fa-archive
+      全部标签: 
+        path: /tags 
+        icon: fa-regular fa-tags
+      全部分类: 
+        path: /categories 
+        icon: fa-regular fa-folder
   # Article date format
   article_date_format: auto # auto, relative, YYYY-MM-DD, YYYY-MM-DD HH:mm:ss etc.
   # Article excerpt length
@@ -413,7 +419,8 @@ footer:
   # Show website running time
   runtime: true # show website running time or not
   # Icon in footer, write fontawesome icon code here
-  icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
+  # icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
+  icon: '<img src="/images/baixie.webp" style="display: inline-block;" >'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
   start: 2026/6/13 11:35:00
   # Site statistics
@@ -436,6 +443,7 @@ inject:
   # Inject custom head html code
   head: 
     - <link rel="stylesheet" href="/css/decrypt.css">
+    - <link rel="stylesheet" href="/css/chore.css">
   # Inject custom footer html code
   footer:
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -453,14 +461,15 @@ plugins:
     enable: false # Whether to enable
   # Aplayer. See https://github.com/DIYgod/APlayer
   aplayer:
-    enable: false # Whether to enable
+    enable: true # Whether to enable
     type: fixed # fixed, mini
     audios:
-      - name: # audio name
-        artist: # audio artist
-        url: # audio url
-        cover: # audio cover url
-        lrc: # audio cover lrc
+      - name: "モンダイナイトリッパー！(code:MK ver)"
+        artist: "sasakure.‌UK feat.初音ミク"
+        url: "/music/00/index.m4a"
+        cover: "/music/00/index.png"
+        lrc: "/music/00/index.lrc"
+
 #      - name: # audio name
 #        artist: # audio artist
 #        url: # audio url
