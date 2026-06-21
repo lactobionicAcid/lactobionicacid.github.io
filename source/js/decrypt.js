@@ -53,8 +53,19 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (err) {
           console.error('Failed to clear stored password', err);
         }
-        // 现代浏览器不再支持 true/false 参数，使用无参数调用
-        location.reload();
+
+        // 清理已解密内容
+        block.classList.remove('decrypted');
+        block.querySelector('.decrypted-content').innerHTML = '';
+        block.querySelector('.encrypt-input').value = '';
+
+        // 更改左上角锁的图标
+        const lockStatus = block.querySelector('.lock-status');
+        lockStatus.classList.add('fa-lock');
+        lockStatus.classList.remove('fa-unlock');
+
+        clearDecryptHints(block);
+        showHint(block, '已恢复加密状态。', 'fa-solid fa-circle-info');
       }
     });
 
@@ -133,13 +144,18 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
 
+        // 更改左上角锁的图标
+        const lockStatus = block.querySelector('.lock-status');
+        lockStatus.classList.remove('fa-lock');
+        lockStatus.classList.add('fa-unlock');
+
         // 添加自动解密提示
         if (isAutoDecrypt) {
-          showHint(block, '以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-unlock');
+          showHint(block, '以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-info');
         } else {
-          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-lock-open', 'success');
+          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-check', 'success');
         }
-      } catch (error) {
+      } catch (err) {
         showHint(block, '密码错误！请重试。', 'fa-solid fa-circle-xmark', 'danger');
       }
     }
