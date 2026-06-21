@@ -144,6 +144,9 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
 
+        // 解密完成后清空输入框
+        block.querySelector('.encrypt-input').value = '';
+
         // 更改左上角锁的图标
         const lockStatus = block.querySelector('.lock-status');
         lockStatus.classList.remove('fa-lock');

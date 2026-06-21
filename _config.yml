@@ -127,7 +127,7 @@ html_minifier:
   silent: true
 css_minifier:
   silent: true
-js_concator:
+js_minifier:
   silent: true
 image_minifier:
   silent: true
