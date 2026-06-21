@@ -2,7 +2,8 @@
 title: 极客蓝主题相关解密
 abbrlink: a12a
 date: 2026-06-16 21:56:08
-tag: ['PCL 启动器', '含有加密内容的页面']
+category: 'PCL 启动器'
+tag: ['个性化主题', '含有加密内容的页面']
 excerpt: 与极客蓝相关的解密 WRITEUP。部分内容需要使用密码访问。
 ---
 

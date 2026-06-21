@@ -3,7 +3,8 @@ license: cc_by_nc
 title: PCL 启动器主题解锁教程
 abbrlink: sp-1
 date: 2024-11-10 03:37:00
-tag: ['PCL 启动器']
+category: 'PCL 启动器'
+tag: ['个性化主题']
 thumbnail: 202411/sp-1/head.png
 excerpt: 始于 2024 年，这篇文章详细讲述了如何解锁 PCL 的各个主题，同时展示了各个隐藏主题的外观。
 ---
