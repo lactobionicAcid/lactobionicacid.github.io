@@ -200,13 +200,13 @@ navbar:
   auto_hide: false
   # Navbar background color
   color:
-    left: "#f78736" #left side 
-    right: "#367df7"  #right side
+    left: "#a8f2f6" #left side 
+    right: "#2676ff"  #right side
     transparency: 35 #percent (10-99)
   # Navbar width (usually no need to modify)
   width:
     home: 1200px #home page
-    pages: 1000px #other pages
+    pages: 1080px #other pages
   # Navbar links
   links:
     Home: 
