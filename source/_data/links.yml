@@ -1,6 +1,8 @@
-- links_category: Normal
-  has_thumbnail: false
+- links_category: null
+  has_thumbnail: true
   list:
-    - name: GitHub
-      link: https://github.com
-      avatar: https://github.com/favicon.ico
+    - name: Theme Redefine
+      link: https://redefine.ohevan.com/
+      avatar: https://redefine.ohevan.com/images/redefine-favicon.svg
+      thumbnail: https://assets.ohevan.com/img/210591fbf0fc1576646f418af8373dc7.webp
+      description: Redefine 是一款简洁，快速，纯净的 Hexo 主题。
