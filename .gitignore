@@ -7,3 +7,5 @@ public/
 .deploy*/
 _multiconfig.yml
 scripts/shortcode-encrypt.js
+
+source/_posts/hidden-*.md
