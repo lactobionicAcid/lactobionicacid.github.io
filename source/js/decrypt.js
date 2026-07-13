@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // 过期则清除
             localStorage.removeItem(storageKey);
           }
-        } catch (e) {
-          console.error('Failed to parse saved data', e);
+        } catch (err) {
+          console.error('Failed to parse saved data', err);
           localStorage.removeItem(storageKey);
         }
       }
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // 添加回车键支持（使用 keydown 并阻止默认行为，避免表单提交导致刷新）
+    // 回车解密
     document.body.addEventListener('keydown', function(e) {
       if (e.target && e.target.classList && e.target.classList.contains('encrypt-input') && e.key === 'Enter') {
         e.preventDefault();
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // 全局处理恢复加密（clear）点击 — 只绑定一次，避免重复绑定
+    // 全局处理恢复加密（clear）点击
     document.body.addEventListener('click', function(e) {
       const clearBtn = e.target.closest('.clear');
       if (clearBtn) {
@@ -64,13 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
         lockStatus.classList.add('fa-lock');
         lockStatus.classList.remove('fa-unlock');
 
-        clearDecryptHints(block);
         showHint(block, '已恢复加密状态。', 'fa-solid fa-circle-info');
       }
     });
 
     // 在指定位置显示提示
     function showHint(block, message, icon, type = 'info') {
+      // ...之前先清除已有的提示
+      const hints = block.querySelectorAll('.auto-decrypt-hint');
+      hints.forEach(hint => hint.remove());
+
       const inputGroup = block && block.querySelector && block.querySelector('.encrypt-input-group');
       if (!inputGroup) return;
 
@@ -87,12 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
       inputGroup.appendChild(wrapper);
     }
 
-    // 清除提示
-    function clearDecryptHints(block) {
-      const hints = block.querySelectorAll('.auto-decrypt-hint');
-      hints.forEach(hint => hint.remove());
-    }
-
     // 解密部分
     function handleDecrypt(block, isAutoDecrypt = false, password = null) {
       if (!block) return;
@@ -104,8 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // 确保结果区域可见
       if (decryptResult) decryptResult.style.display = 'block';
-      // 清除所有提示信息
-      clearDecryptHints(block);
       
       if (!input && !isAutoDecrypt) {
         showHint(block, '请输入密码！', 'fa-solid fa-triangle-exclamation', 'warning');
@@ -116,12 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const bytes = CryptoJS.AES.decrypt(encrypted, input);
         const text = bytes.toString(CryptoJS.enc.Utf8);
         
-        // 使用统一标识符验证
+        // 统一标识符验证
         const prefix = "HEXO_ENCRYPT_PREFIX|";
         const suffix = "|HEXO_ENCRYPT_SUFFIX";
         
         if (!text || text.indexOf(prefix) === -1 || text.indexOf(suffix) === -1) {
-          throw new Error('解密失败');
+          throw new Error('解密失败，数据不正确');
         }
         
         // 提取实际内容
@@ -129,37 +124,43 @@ document.addEventListener('DOMContentLoaded', function() {
         const endIndex = text.indexOf(suffix);
         const actualContent = text.substring(startIndex, endIndex);
         
-        // 使用 marked.parse() 渲染 Markdown
+        // 渲染 Markdown
         resultArea.innerHTML = DOMPurify.sanitize(marked.parse(actualContent));
         block.classList.add('decrypted');
-        
-        // 存储密码到本地（仅在手动输入时）
-        if (!isAutoDecrypt) {
-          try {
-            const storageKey = `hexo-encrypt-${block.dataset.encrypted}`;
-            const expireTime = Date.now() + 3 * 86400000;
-            localStorage.setItem(storageKey, JSON.stringify({ password: input, expire: expireTime }));
-          } catch (err) {
-            console.error('Failed to save password to localStorage', err);
-          }
-        }
 
-        // 解密完成后清空输入框
-        block.querySelector('.encrypt-input').value = '';
-
-        // 更改左上角锁的图标
-        const lockStatus = block.querySelector('.lock-status');
-        lockStatus.classList.remove('fa-lock');
-        lockStatus.classList.add('fa-unlock');
-
-        // 添加自动解密提示
-        if (isAutoDecrypt) {
-          showHint(block, '以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-info');
-        } else {
-          showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-check', 'success');
-        }
       } catch (err) {
-        showHint(block, '密码错误！请重试。', 'fa-solid fa-circle-xmark', 'danger');
+        if (isAutoDecrypt) {
+          console.warn('Auto decryption failed', err);
+        } else {
+          showHint(block, '密码错误！请重试。', 'fa-solid fa-circle-xmark', 'danger');
+        }
+        return;
+      };
+
+      // 存储密码到本地（仅在手动输入时）
+      if (!isAutoDecrypt) {
+        try {
+          const storageKey = `hexo-encrypt-${block.dataset.encrypted}`;
+          const expireTime = Date.now() + 3 * 86400000; // 3 天内保持解密状态
+          localStorage.setItem(storageKey, JSON.stringify({ password: input, expire: expireTime }));
+        } catch (err) {
+          console.error('Failed to save password to localStorage', err);
+        }
+      }
+
+      // 解密完成后清空输入框
+      block.querySelector('.encrypt-input').value = '';
+
+      // 更改左上角锁的图标
+      const lockStatus = block.querySelector('.lock-status');
+      lockStatus.classList.remove('fa-lock');
+      lockStatus.classList.add('fa-unlock');
+
+      // 添加解密提示
+      if (isAutoDecrypt) {
+        showHint(block, '以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-info');
+      } else {
+        showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-check', 'success');
       }
     }
 });
