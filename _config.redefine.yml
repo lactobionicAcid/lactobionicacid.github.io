@@ -215,6 +215,9 @@ navbar:
     Archives: 
       path: /archives 
       icon: fa-regular fa-archive
+    相册:
+      path: /masonry
+      icon: fa-regular fa-images
     About: 
       icon: fa-regular fa-user
       submenus:
@@ -262,6 +265,9 @@ home:
       归档: 
         path: /archives 
         icon: fa-regular fa-archive
+      相册:
+        path: /masonry
+        icon: fa-regular fa-images
       全部标签: 
         path: /tags 
         icon: fa-regular fa-tags
