@@ -8,7 +8,7 @@ hexo.extend.tag.register('decrypt', (args, content) => {
       <form style="display: contents;"><input type="password" placeholder="输入密码……" class="encrypt-input" autocomplete="current-password"></form>
       <button type="button" class="decrypt-btn"><i class="fa-solid fa-key"></i>&ensp;查看内容</button>
     </div>
-    <div class="decrypt-result">
+    <div class="decrypt-result" style="display: block;">
       <div class="decrypted-content"></div>
     </div>
   </div>

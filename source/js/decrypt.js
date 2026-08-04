@@ -1,22 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 自动解密：检查本地存储的密码
+    // 移除已过期的密码
+    const keys = Object.keys(localStorage);
+    keys.forEach(key => {
+      if (key.startsWith('hexo-encrypt')) {
+        const data = localStorage.getItem(key);
+        const { hash, expire_at } = JSON.parse(data);
+        if (!expire_at || expire_at < Date.now()) { localStorage.removeItem(key); }
+      }
+    });
+
+    // 自动解密
     const encryptedBlocks = document.querySelectorAll('.encrypted-block');
     
     encryptedBlocks.forEach(block => {
-      const storageKey = `hexo-encrypt-${block.dataset.encrypted}`;
+      const encrypted_hash = CryptoJS.MD5(block.dataset.encrypted).toString();
+      const storageKey = `hexo-encrypt-${encrypted_hash}`;
       const savedData = localStorage.getItem(storageKey);
       
       if (savedData) {
         try {
-          const { password, expire } = JSON.parse(savedData);
-          
-          // 检查是否过期
-          if (expire > Date.now()) {
-            setTimeout(() => handleDecrypt(block, true, password), 300);
-          } else {
-            // 过期则清除
-            localStorage.removeItem(storageKey);
-          }
+          const { hash, expire_at } = JSON.parse(savedData);
+          setTimeout(() => handleDecrypt(block, true, hash), 300);
         } catch (err) {
           console.error('Failed to parse saved data', err);
           localStorage.removeItem(storageKey);
@@ -49,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const block = clearBtn.closest('.encrypted-block');
         if (!block) return;
         try {
-          localStorage.removeItem(`hexo-encrypt-${block.dataset.encrypted}`);
+          const encrypted_hash = CryptoJS.MD5(block.dataset.encrypted).toString();
+          localStorage.removeItem(`hexo-encrypt-${encrypted_hash}`);
         } catch (err) {
           console.error('Failed to clear stored password', err);
         }
@@ -91,16 +96,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 解密部分
-    function handleDecrypt(block, isAutoDecrypt = false, password = null) {
+    function handleDecrypt(block, isAutoDecrypt = false, hash = null) {
       if (!block) return;
       
       const encrypted = decodeURIComponent(block.dataset.encrypted || '');
-      const input = isAutoDecrypt ? password : (block.querySelector('.encrypt-input') && block.querySelector('.encrypt-input').value) || '';
+      const input = block.querySelector('.encrypt-input') && block.querySelector('.encrypt-input').value || '';
       const resultArea = block.querySelector('.decrypted-content');
       const decryptResult = block.querySelector('.decrypt-result');
-      
-      // 确保结果区域可见
-      if (decryptResult) decryptResult.style.display = 'block';
       
       if (!input && !isAutoDecrypt) {
         showHint(block, '请输入密码！', 'fa-solid fa-triangle-exclamation', 'warning');
@@ -108,10 +110,24 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       try {
-        const bytes = CryptoJS.AES.decrypt(encrypted, input);
-        const text = bytes.toString(CryptoJS.enc.Utf8);
+        // 计算密码哈希值
+        if (!isAutoDecrypt) {
+          const sha256salt = CryptoJS.SHA256(input).toString();
+          var sha256value = CryptoJS.SHA256(input + sha256salt).toString();
+        } else {
+          var sha256value = hash;
+        }
         
-        // 统一标识符验证
+        const key = CryptoJS.enc.Hex.parse(sha256value.slice(0, 32));
+        const iv = CryptoJS.enc.Hex.parse(sha256value.slice(32, 64));
+
+        const text = CryptoJS.AES.decrypt(encrypted, key, {
+          iv: iv, 
+          mode: CryptoJS.mode.CBC, 
+          padding: CryptoJS.pad.Pkcs7
+        }).toString(CryptoJS.enc.Utf8);
+        
+        // 标识符验证
         const prefix = "HEXO_ENCRYPT_PREFIX|";
         const suffix = "|HEXO_ENCRYPT_SUFFIX";
         
@@ -129,10 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
         block.classList.add('decrypted');
 
       } catch (err) {
-        if (isAutoDecrypt) {
-          console.warn('Auto decryption failed', err);
-        } else {
+        if (!isAutoDecrypt) {
           showHint(block, '密码错误！请重试。', 'fa-solid fa-circle-xmark', 'danger');
+        } else {
+          console.warn('Auto decryption failed', err);
         }
         return;
       };
@@ -140,9 +156,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // 存储密码到本地（仅在手动输入时）
       if (!isAutoDecrypt) {
         try {
-          const storageKey = `hexo-encrypt-${block.dataset.encrypted}`;
-          const expireTime = Date.now() + 3 * 86400000; // 3 天内保持解密状态
-          localStorage.setItem(storageKey, JSON.stringify({ password: input, expire: expireTime }));
+          const encrypted_hash = CryptoJS.MD5(block.dataset.encrypted).toString();
+          const storageKey = `hexo-encrypt-${encrypted_hash}`;
+          const expireTime = Date.now() + 7 * 86400000; // 7 天内保持解密状态
+          localStorage.setItem(storageKey, JSON.stringify({ hash: sha256value, expire_at: expireTime }));
         } catch (err) {
           console.error('Failed to save password to localStorage', err);
         }
@@ -158,9 +175,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // 添加解密提示
       if (isAutoDecrypt) {
-        showHint(block, '以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-info');
+        showHint(block, '以下内容将在 7 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-info');
       } else {
-        showHint(block, '密码正确，以下内容将在 3 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-check', 'success');
+        showHint(block, '密码正确，以下内容将在 7 天内保持解密状态。<a class="clear" href="javascript:void(0);">恢复加密状态</a>', 'fa-solid fa-circle-check', 'success');
       }
     }
 });
