@@ -40,6 +40,10 @@
   outline: none;
 }
 
+.encrypt-input:disabled {
+  cursor: not-allowed;
+}
+
 .decrypt-btn {
   color: var(--default-text-color);
   background-color: var(--second-background-color);
@@ -54,10 +58,14 @@
   user-select: none;
 }
 
-.decrypt-btn:focus, .decrypt-btn:hover {
+.decrypt-btn:not(:disabled):focus, .decrypt-btn:not(:disabled):hover {
   color: var(--primary-color);
   box-shadow: var(--redefine-box-shadow);
   background-color: var(--background-color)
+}
+
+.decrypt-btn:disabled {
+  cursor: not-allowed;
 }
 
 @media (max-width: 867px) {

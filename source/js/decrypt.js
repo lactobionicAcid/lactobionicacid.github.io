@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const btn = e.target.closest('.decrypt-btn');
       if (btn) {
         const block = btn.closest('.encrypted-block');
+        if (block.classList.contains('decrypted')) return;
         if (block) handleDecrypt(block);
       }
     });
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.target && e.target.classList && e.target.classList.contains('encrypt-input') && e.key === 'Enter') {
         e.preventDefault();
         const block = e.target.closest('.encrypted-block');
+        if (block.classList.contains('decrypted')) return;
         if (block) handleDecrypt(block);
       }
     });
@@ -52,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (clearBtn) {
         const block = clearBtn.closest('.encrypted-block');
         if (!block) return;
+        block.querySelector('.encrypt-input').removeAttribute(`disabled`)
+        block.querySelector('.decrypt-btn').removeAttribute(`disabled`)
         try {
           const encrypted_hash = CryptoJS.MD5(block.dataset.encrypted).toString();
           localStorage.removeItem(`hexo-encrypt-${encrypted_hash}`);
@@ -110,18 +114,25 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       try {
-        // 计算密码哈希值
-        if (!isAutoDecrypt) {
-          const sha256salt = CryptoJS.SHA256(input).toString();
-          var sha256value = CryptoJS.SHA256(input + sha256salt).toString();
-        } else {
-          var sha256value = hash;
-        }
-        
-        const key = CryptoJS.enc.Hex.parse(sha256value.slice(0, 32));
-        const iv = CryptoJS.enc.Hex.parse(sha256value.slice(32, 64));
+        // 主要解密部分
+        const iv_base64_length = parseInt(encrypted.slice(0, 2), 16);
+        const iv = CryptoJS.enc.Base64.parse(encrypted.slice(2, 2 + iv_base64_length));
 
-        const text = CryptoJS.AES.decrypt(encrypted, key, {
+        const pwdsalt_base64_length = parseInt(encrypted.slice(2 + iv_base64_length, 4 + iv_base64_length), 16);
+        if (!isAutoDecrypt) {
+          const pwdsalt = CryptoJS.enc.Base64.parse(encrypted.slice(4+iv_base64_length, 4+iv_base64_length+pwdsalt_base64_length));
+          hash = CryptoJS.PBKDF2(input, pwdsalt, {
+            keySize: 8,
+            iterations: 7314, // 视设备性能调整… 迭代次数太大了会导致解密时出现显著的卡顿
+            hasher: CryptoJS.algo.SHA256
+          });
+        } else {
+          hash = CryptoJS.enc.Hex.parse(hash);
+        }
+
+        const actualEncrypted = encrypted.slice(4+iv_base64_length+pwdsalt_base64_length);
+        
+        const text = CryptoJS.AES.decrypt(actualEncrypted, hash, {
           iv: iv, 
           mode: CryptoJS.mode.CBC, 
           padding: CryptoJS.pad.Pkcs7
@@ -159,14 +170,19 @@ document.addEventListener('DOMContentLoaded', function() {
           const encrypted_hash = CryptoJS.MD5(block.dataset.encrypted).toString();
           const storageKey = `hexo-encrypt-${encrypted_hash}`;
           const expireTime = Date.now() + 7 * 86400000; // 7 天内保持解密状态
-          localStorage.setItem(storageKey, JSON.stringify({ hash: sha256value, expire_at: expireTime }));
+          localStorage.setItem(storageKey, JSON.stringify({ hash: hash.toString(), expire_at: expireTime }));
         } catch (err) {
           console.error('Failed to save password to localStorage', err);
         }
       }
 
-      // 解密完成后清空输入框
+      // TODO: 更安全的本地密码存储
+      //       （之后有转移到服务器上认证的计划… 暂时不做）
+
+      // 解密完成后，清空输入框并锁定
       block.querySelector('.encrypt-input').value = '';
+      block.querySelector('.encrypt-input').setAttribute(`disabled`, ``)
+      block.querySelector('.decrypt-btn').setAttribute(`disabled`, ``)
 
       // 更改左上角锁的图标
       const lockStatus = block.querySelector('.lock-status');
