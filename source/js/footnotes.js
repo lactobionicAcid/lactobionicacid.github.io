@@ -68,12 +68,12 @@
 
     footnotes.forEach(function(item) {
       const li = document.createElement('li');
-      li.id = 'footnote-item-' + item.id;
+      li.id = '​footnote-item-' + item.id;
       li.className = 'footnote-item';
 
       const backLink = document.createElement('a');
       backLink.className = 'footnote-backref';
-      backLink.href = '#footnote-ref-' + item.id;
+      backLink.href = '#​footnote-ref-' + item.id;
       backLink.textContent = '↑ ';
       backLink.setAttribute('aria-label', 'Return to content');
       li.appendChild(backLink);
@@ -96,6 +96,14 @@
 
     section.appendChild(list);
     placeholder.appendChild(section);
+
+    tippy(document.querySelector('.footnote-ref'), {
+      animation: 'shift-toward',
+      arrow: true,
+      arrowType: 'round',
+      delay: [0, 75],
+      duration: [270, 300]
+    })
   }
 
   if (document.readyState === 'loading') {
@@ -103,37 +111,4 @@
   } else {
     renderFootnotes();
   }
-
-  // Scroll target into the vertical center of the viewport
-  function scrollToCenter(target, smooth = true) {
-    if (!target) return;
-    const rect = target.getBoundingClientRect();
-    const targetMiddle = window.scrollY + rect.top + rect.height / 2;
-    const scrollTo = Math.max(0, Math.round(targetMiddle - window.innerHeight / 2));
-    try {
-      window.scrollTo({ top: scrollTo, behavior: smooth ? 'smooth' : 'auto' });
-    } catch (e) {
-      window.scrollTo(0, scrollTo);
-    }
-  }
-
-  // Intercept internal anchor clicks for smoother, centered jumps
-  document.addEventListener('click', function (e) {
-    const a = e.target.closest && e.target.closest('a.footnote-ref, a.footnote-backref');
-    if (!a) return;
-    const href = a.getAttribute('href') || '';
-    if (!href.startsWith('#')) return;
-    const id = href.slice(1);
-    const target = document.getElementById(id);
-    if (target) {
-      e.preventDefault();
-      // push the hash without jumping instantly
-      if (history && history.replaceState) history.replaceState(null, '', href);
-      scrollToCenter(target, true);
-      // For accessibility, move focus after scrolling (non-destructive)
-      setTimeout(function() {
-        try { target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); } catch (err) {}
-      }, 500);
-    }
-  }, false);
 })();

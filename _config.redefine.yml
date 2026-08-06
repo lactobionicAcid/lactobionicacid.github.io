@@ -222,10 +222,8 @@ navbar:
       icon: fa-regular fa-user
       submenus:
         "这个博客": /about
+        "友情链接": /friends
         "源代码": https://github.com/lactobionicAcid/lactobionicacid.github.io
-    Friends:
-      path: /friends
-      icon: fa-regular fa-user-group
     "PCL 主页状态":
       path: /PCL-Homepage-Status
       icon: fa-regular fa-arrow-up-right-from-square
@@ -448,6 +446,7 @@ inject:
   enable: true
   # Inject custom head html code
   head: 
+    - <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/animations/shift-toward.css">
     - <link rel="stylesheet" href="/css/decrypt.css">
     - <link rel="stylesheet" href="/css/githublabel.css">
     - <link rel="stylesheet" href="/css/kbd.css">
@@ -456,6 +455,8 @@ inject:
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     - <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"></script>
+    - <script src="https://unpkg.com/popper.js@1"></script>
+    - <script src="https://unpkg.com/tippy.js@5"></script>
     - <script src="/js/decrypt.js"></script>
     - <script src="/js/footnotes.js"></script>
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end

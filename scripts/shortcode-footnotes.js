@@ -35,13 +35,13 @@ hexo.extend.tag.register('ref', function(args) {
   const content = escapeHtml(rawContent);
 
   return `
-  <sup class="footnote-ref-wrapper">
-    <a class="footnote-ref" id="footnote-ref-${id}" href="#footnote-item-${id}" data-footnote-id="${id}" data-footnote-content="${content}">
+  <sup id="​footnote-ref-${id}">
+    <a href="#​footnote-item-${id}" data-tippy-content="${content}" class="footnote-ref" data-footnote-id="${id}" data-footnote-content="${content}">
       [${label}]
     </a>
   </sup>`;
 });
 
-hexo.extend.tag.register('references', function() {
+hexo.extend.tag.register('references', function(args) {
   return '<div class="footnotes-placeholder"></div>';
 });
