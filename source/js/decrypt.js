@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const pwdsalt = CryptoJS.enc.Base64.parse(encrypted.slice(4+iv_base64_length, 4+iv_base64_length+pwdsalt_base64_length));
           hash = CryptoJS.PBKDF2(input, pwdsalt, {
             keySize: 8,
-            iterations: 7314, // 视设备性能调整… 迭代次数太大了会导致解密时出现显著的卡顿
+            iterations: 7314,
             hasher: CryptoJS.algo.SHA256
           });
         } else {
@@ -175,9 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
           console.error('Failed to save password to localStorage', err);
         }
       }
-
-      // TODO: 更安全的本地密码存储
-      //       （之后有转移到服务器上认证的计划… 暂时不做）
 
       // 解密完成后，清空输入框并锁定
       block.querySelector('.encrypt-input').value = '';
