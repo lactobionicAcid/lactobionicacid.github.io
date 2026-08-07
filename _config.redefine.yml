@@ -457,6 +457,7 @@ inject:
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"></script>
     - <script src="https://unpkg.com/popper.js@1"></script>
     - <script src="https://unpkg.com/tippy.js@5"></script>
+    - <script defer src="/live2d-widget/dist/autoload.js"></script>
     - <script src="/js/decrypt.js"></script>
     - <script src="/js/footnotes.js"></script>
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
@@ -530,3 +531,6 @@ developer:
   # Whether to enable developer mode (only for developers who want to modify the theme source code, not for ordinary users)
   enable: false
 # DEVELOPER MODE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+live2d:
+  enable: true
