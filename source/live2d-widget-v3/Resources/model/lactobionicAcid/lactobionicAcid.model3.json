@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "lactobionicAcid.moc3",
+		"Textures": [
+			"lactobionicAcid.4096/texture_00.webp",
+			"lactobionicAcid.4096/texture_01.webp",
+			"lactobionicAcid.4096/texture_02.webp",
+			"lactobionicAcid.4096/texture_03.webp"
+		],
+		"Physics": "lactobionicAcid.physics3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeROpen",
+				"ParamEyeLOpen"
+			]
+		}
+	]
+}

@@ -1,0 +1,454 @@
+{
+	"mouseover": [
+		{
+			"selector": "#live2d",
+			"text": [
+				"有什么事情嘛？",
+				"(｡･∀･)ﾉﾞ嗨～",
+				"喵喵喵？",
+        "早安(。・∀・)ノ"
+			]
+		},
+		{
+			"selector": "#waifu-tool-hitokoto",
+			"text": [
+				"打捞一个漂流瓶～？",
+				"听听看别人会怎么说吧。"
+			]
+		},
+		{
+			"selector": "#waifu-tool-photo",
+			"text": [
+				"拍…拍照？只准你拍一张！",
+				"现，现在就要拍照吗？",
+				"……只拍一张的话，行吧～"
+			]
+		},
+		{
+			"selector": "#waifu-tool-info",
+			"text": [
+				"想详细了解这个 Live2D 插件吗？",
+				"也许可以稍微赞助插件开发者一点…"
+			]
+		},
+		{
+			"selector": "#waifu-tool-quit",
+			"text": [
+				"是我挡在这里，太碍事了吗？",
+				"也许你喜欢一个人独处…？",
+				"我们也许要暂时告别一段时间……"
+			]
+		},
+		{
+			"selector": "a[href^='/music']",
+			"text": [
+				"为什么要在博客里存放一些音乐呢？",
+				"偶尔听两首歌，放松放松心情。"
+			]
+		},
+		{
+			"selector": "a[href^='/archives']",
+			"text": [
+				"翻页比较麻烦吗，那就来看看文章归档吧。",
+				"文章目录都整理在这里啦！"
+			]
+		},
+		{
+			"selector": "a[href^='/masonry']",
+			"text": [
+				"也许是主人随手拍的照片，也许是其他图片……",
+				"找找看有没有你喜欢的照片？",
+				"别想啦，没有铯图的。"
+			]
+		},
+		{
+			"selector": "a[href^='/about']",
+			"text": [
+				"关于这个博客的一切！",
+				"当你凝视博客最深处的时候，博客也在凝视着你。"
+			]
+		},
+		{
+			"selector": "a[href^='/friends']",
+			"text": [
+				"要去大佬们的家看看吗？",
+				"要去拜访一下我的朋友们吗？"
+			]
+		},
+		{
+			"selector": ".navbar-list .navbar-item .sub-menu li a[href^='https://github.com']",
+			"text": [
+				"前往这个博客的源码仓库！",
+				"稍微看看就好，不要把整个博客都 Fork 下来。"
+			]
+		},
+		{
+			"selector": ".navbar-list .navbar-item a[href^='/PCL-Homepage-Status']",
+			"text": [
+				"对 PCL 启动器内置的各大主页上线情况的长期记录！"
+			]
+		},
+		{
+			"selector": ".navbar-item a.has-dropdown",
+			"text": [
+				"快看看这里都有什么呢？"
+			]
+		},
+		{
+			"selector": ".sidebar-content .avatar, .sidebar-content .author",
+			"text": [
+				"我家主人好看吗？",
+				"这是我家主人(*´∇｀*)"
+			]
+		},
+		{
+			"selector": ".home-article-date",
+			"text": [
+				"一些文章的内容具有时效性…… 还请多多注意。",
+				"这篇文章距今已经发布了多久了呢？"
+			]
+		},
+		{
+			"selector": ".license",
+			"text": [
+				"要记得规范转载哦。",
+				"这篇文章使用了 {text} 协议！",
+				"标明内容出处是一个好习惯。"
+			]
+		},
+		{
+			"selector": ".links-of-author",
+			"text": [
+				"这里是主人的常驻地址哦。",
+				"这里有主人的联系方式！"
+			]
+		},
+		{
+			"selector": ".followme",
+			"text": [
+				"手机扫一下就能继续看，很方便呢～",
+				"扫一扫，打开新世界的大门！"
+			]
+		},
+		{
+			"selector": ".article-content p img",
+			"text": [
+				"点击图片可以放大呢！"
+			]
+		},
+		{
+			"selector": ".highlight-container .copy-button",
+			"text": [
+				"点击这个按钮就会自动复制代码。"
+			]
+		},
+		{
+			"selector": ".highlight-container .fold-button",
+			"text": [
+				"如果代码块过长，你可以点击这个按钮，将其暂时折叠起来。"
+			]
+		},
+		{
+			"selector": ".highlight-container",
+			"text": [
+				"希望这些代码能一次成功跑起来。",
+				"也许还要再优化一番……"
+			]
+		},
+		{
+			"selector": "a[href^='mailto']",
+			"text": [
+				"如果需要咨询问题，欢迎向我发送邮件。",
+				"邮件我会及时回复的！",
+				"点击就可以发送邮件啦～"
+			]
+		},
+		{
+			"selector": ".social-contact-item a[href^='https://space.bilibili.com']",
+			"text": [
+				"欢迎关注我的 B 站账号！"
+			]
+		},
+		{
+			"selector": ".social-contact-item a[href^='https://github.com']",
+			"text": [
+				"欢迎关注我的 GitHub 账号！"
+			]
+		},
+		{
+			"selector": ".social-contact-item a[href^='https://x.com']",
+			"text": [
+				"欢迎关注我的 X（推特）账号！",
+				"由于网络制限，我一般不在 X 上活动，敬请注意。"
+			]
+		},
+		{
+			"selector": ".social-contact-item-qr",
+			"text": [
+				"这里有二维码可以扫！",
+				"为什么这里要使用 DataMatrix 码？"
+			]
+		},
+		{
+			"selector": "a[href^='/tags/']",
+			"text": [
+				"要去看看 <span>{text}</span> 标签么？",
+				"点它可以查看此标签下的所有文章哟！"
+			]
+		},
+		{
+			"selector": "a[href^='/categories/']",
+			"text": [
+				"要去看看 <span>{text}</span> 分类么？",
+				"点它可以查看此分类下的所有文章哟！"
+			]
+		},
+		{
+			"selector": ".article-next a[rel='next']",
+			"text": [
+				"来看看下一篇文章吧。",
+				"点它可以看下一篇文章哦！",
+				"要翻到下一篇文章吗？"
+			]
+		},
+		{
+			"selector": ".article-prev a[rel='prev']",
+			"text": [
+				"来看看上一篇文章吧。",
+				"点它可以看上一篇文章哦！",
+				"要翻到上一篇文章吗？"
+			]
+		},
+		{
+			"selector": ".post-title-link",
+			"text": [
+				"要看看 <span>{text}</span> 这篇文章吗？"
+			]
+		},
+		{
+			"selector": "a[href^='/20']",
+			"text": [
+				"要去这篇文章看一眼吗？",
+				"希望这篇文章有你感兴趣的内容。"
+			]
+		},
+		{
+			"selector": ".page-aside-toggle",
+			"text": [
+				"点它可以展开或收起目录。"
+			]
+		},
+		{
+			"selector": ".toggle-tools-list",
+			"text": [
+				"一些额外的个性化项！",
+        "这里的一些工具能帮助你获得更好的阅读体验。"
+			]
+		},
+    {
+			"selector": ".tool-scroll-to-top",
+			"text": [
+				"点它就可以回到顶部啦！",
+				"又回到最初的起点～",
+				"要回到开始的地方么？"
+			]
+		},
+    {
+			"selector": ".tool-scroll-to-bottom",
+			"text": [
+				"点它就可以前往底部啦！",
+				"要前往文章底部么？"
+			]
+		},
+    {
+			"selector": ".tool-dark-light-toggle",
+			"text": [
+				"点它就可以切换深色模式啦！",
+				"阅读文章时，你更喜欢使用浅色模式还是深色模式呢？"
+			]
+		},
+    {
+			"selector": ".tool-font-adjust-minus",
+			"text": [
+				"点它可以减小文字大小！"
+			]
+		},
+    {
+			"selector": ".tool-font-adjust-plus",
+			"text": [
+				"点它可以增加文字大小！"
+			]
+		},
+		{
+			"selector": ".beian a",
+			"text": [
+				"我也是有户口的人哦。",
+				"我的主人可是遵纪守法的好主人。"
+			]
+		},
+		{
+			"selector": ".container a[href^='http'], .nav-link .nav-text",
+			"text": [
+				"要去看看 <span>{text}</span> 么？",
+				"去 <span>{text}</span> 逛逛吧。",
+				"到 <span>{text}</span> 看看吧。"
+			]
+		},
+		{
+			"selector": ".aplayer-body",
+			"text": [
+				"一起来听首歌吧！",
+				"这个博客里居然自带一个音乐播放器呢～",
+				"主人一般会在这里放什么歌呢～？"
+			]
+		},
+		{
+			"selector": ".encrypted-block.decrypted",
+			"text": [
+				"诶，你把密码解开了吗？好厉害！但这里的内容就不能随便转载了哟。"
+			]
+		},
+		{
+			"selector": ".encrypted-block",
+			"text": [
+				"啊啊，这部分的内容看起来被加密了呢……"
+			]
+		},
+		{
+			"selector": "a [href^='http'], a.link",
+			"text": [
+				"博客外面的世界，或许能给你答案。",
+				"要去别处看看吗？"
+			]
+		}
+	],
+	"click": [
+		{
+			"selector": "#live2d",
+			"text": [
+				"啊啊，戳我干嘛～！",
+				"喵！",
+				"哈！",
+				"不要戳啦，这里没有彩蛋。",
+				"不要戳啦～！",
+				"咬你一口！",
+				"/不给戳"
+			]
+		}
+	],
+	"seasons": [
+		{
+			"date": "01/01",
+			"text": "<span>元旦</span>了呢，新的一年又开始了，今年是 {year} 年～"
+		},
+		{
+			"date": "02/14",
+			"text": "又是一年<span>情人节</span>，{year} 年找到对象了嘛～"
+		},
+		{
+			"date": "03/08",
+			"text": "今天是<span>国际妇女节</span>！"
+		},
+		{
+			"date": "03/12",
+			"text": "今天是<span>植树节</span>，要保护环境呀！"
+		},
+		{
+			"date": "04/01",
+			"text": "悄悄告诉你一个秘密～<span>av80433022！</span>"
+		},
+		{
+			"date": "05/01",
+			"text": "今天是<span>五一劳动节</span>，计划好假期去哪里了吗～"
+		},
+		{
+			"date": "06/01",
+			"text": "<span>儿童节</span>了呢，快活的时光总是短暂，要是永远长不大该多好啊…"
+		},
+		{
+			"date": "06/13",
+			"text": "今天是本博客的<span>建站纪念日</span>！ヾ(≧▽≦*)o"
+		},
+		{
+			"date": "08/25",
+			"text": "今天是博客主人的<span>生日</span>！祝他生日快乐ヾ(≧▽≦*)o"
+		},
+		{
+			"date": "10/01",
+			"text": "<span>国庆节</span>到了，为祖国母亲庆生！"
+		}
+	],
+	"time": [
+		{
+			"hour": "6-7",
+			"text": [
+        "你来得真早！",
+        "早安～新的一天开始了～（哈欠"
+      ]
+		},
+		{
+			"hour": "8-10",
+			"text": "上午好！工作顺利嘛，不要久坐，多起来走动走动哦！"
+		},
+		{
+			"hour": "11-13",
+			"text": [
+        "今天的午饭吃什么呢～？",
+        "是啊，吃什么"
+      ]
+		},
+		{
+			"hour": "14-17",
+			"text": "午后很容易犯困呢，今天的运动目标完成了吗？"
+		},
+		{
+			"hour": "18-19",
+			"text": "夕阳的景色很美丽吧，能带我去看看吗？"
+		},
+		{
+			"hour": "20-21",
+			"text": "晚上好，今天过得怎么样？"
+		},
+		{
+			"hour": "22-23",
+			"text": [
+				"夜已深了，早点休息吧。晚安～",
+				"注意调低屏幕亮度、或是启用深色模式，以保护视力。"
+			]
+		},
+		{
+			"hour": "0",
+			"text": [
+        "也许，你和我一样，都是夜猫子？",
+        "少熬夜，多注意身体呐！晚安～。",
+        "注意调低屏幕亮度、或是启用深色模式，以保护视力。"
+      ]
+		},
+		{
+			"hour": "1",
+			"text": [
+        "25 时好。",
+        "Nightcord 见。",
+        "尽管已经凌晨，但有些人的夜生活，现在才刚刚开始。"
+      ]
+		},
+		{
+			"hour": "2-5",
+			"text": [
+        "也许，你和我一样，都是夜猫子？",
+        "ALL☆NIGHTER！",
+        "When the clock is ticking three No baby I don't wanna sleep..."
+      ]
+		}
+	],
+	"message": {
+		"default": [
+			"还在屏幕面前吗？",
+			"不要长时间盯着屏幕看，偶尔走两步，看看窗外的景色，放松一下。",
+			"如果你喜欢这个网页，不如加入收藏夹里吧。"
+		],
+		"console": "哈哈，你打开了控制台，是想要看看我的小秘密吗？",
+		"copy": "你都复制了些什么呀，转载要记得加上出处哦！",
+		"visibilitychange": "嗨，你终于回来了～"
+	}
+}
