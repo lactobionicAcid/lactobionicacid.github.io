@@ -131,8 +131,8 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image: 
-    light: /images/background-2.png # light mode
-    dark: /images/background-1.png # dark mode
+    light: /images/background-2.webp # light mode
+    dark: /images/background-1.webp # dark mode
   # Home banner title
   title: '/mnt/lactobionicAcid'
   # Home banner subtitle
@@ -187,9 +187,9 @@ home_banner:
     # Social links with QRcode drawers
     qrs:
       - icon: qq
-        qr: /images/datamatrix_qq.png
+        qr: /images/datamatrix_qq.webp
       - icon: fa-solid fa-share-nodes
-        qr: /images/datamatrix_this_site.png
+        qr: /images/datamatrix_this_site.webp
 # HOME BANNER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -240,9 +240,9 @@ navbar:
   # Navbar search (local search). Requires hexo-generator-searchdb (npm i hexo-generator-searchdb). See https://github.com/theme-next/hexo-generator-searchdb
   search:
     # Whether to enable
-    enable: true
+    enable: false
     # Preload search data when the page loads
-    preload: true
+    preload: false
 # NAVIGATION BAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -457,7 +457,7 @@ inject:
     - <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"></script>
     - <script src="https://unpkg.com/popper.js@1"></script>
     - <script src="https://unpkg.com/tippy.js@5"></script>
-    - <script defer src="/live2d-widget/dist/autoload.js"></script>
+    - <script defer src="/live2d-widget-v3/autoload.js"></script>
     - <script src="/js/decrypt.js"></script>
     - <script src="/js/footnotes.js"></script>
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
