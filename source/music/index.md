@@ -12,4 +12,9 @@ date: 2026-06-20 20:51:50
 - Track 00
   - モンダイナイトリッパー！(code:MK ver)
   - 作曲：sasakure.‌UK feat.初音ミク
-  - 资源：[M4A 音源](/music/00/index.m4a) | [封面](/music/00/index.png) | [LRC 歌词](/music/00/index.lrc)
+  - 资源：[M4A 音源](/music/00/index.m4a) | [封面](/music/00/index.webp) | [LRC 歌词](/music/00/index.lrc)
+
+- Track 01
+  - 終電彗星
+  - 作曲：かめりあ feat.初音ミク
+  - 资源：[M4A 音源](/music/01/index.m4a) | [封面](/music/01/index.webp) | [LRC 歌词](/music/01/index.lrc)

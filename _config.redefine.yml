@@ -475,11 +475,15 @@ plugins:
     type: fixed # fixed, mini
     audios:
       - name: "モンダイナイトリッパー！(code:MK ver)"
-        artist: "sasakure.‌UK feat.初音ミク"
+        artist: "sasakure.UK feat.初音ミク"
         url: "/music/00/index.m4a"
-        cover: "/music/00/index.png"
+        cover: "/music/00/index.webp"
         lrc: "/music/00/index.lrc"
-
+      - name: "終電彗星"
+        artist: "かめりあ feat.初音ミク"
+        url: "/music/01/index.m4a"
+        cover: "/music/01/index.webp"
+        lrc: "/music/01/index.lrc"
 #      - name: # audio name
 #        artist: # audio artist
 #        url: # audio url
