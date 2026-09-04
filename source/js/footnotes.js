@@ -106,9 +106,5 @@
     })
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderFootnotes);
-  } else {
-    renderFootnotes();
-  }
+  renderFootnotes();
 })();

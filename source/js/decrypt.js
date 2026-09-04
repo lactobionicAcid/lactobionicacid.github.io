@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function init() {
   // 移除已过期的密码
   const keys = Object.keys(localStorage);
   keys.forEach(key => {
@@ -57,7 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
       showHint(block, '已恢复加密状态。', 'fa-solid fa-circle-info');
     }
   });
-});
+}
+
+// 初始化
+var inited;
+if (!inited) {
+  init()
+  inited = true
+}
 
 // 自动解密
 if (window.location.pathname.search(/\/(\d+){6}\/.{4}/) == 0) {
