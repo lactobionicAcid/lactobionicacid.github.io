@@ -89,7 +89,7 @@ excerpt: 始于 2024 年，这篇文章详细讲述了如何解锁 PCL 的各个
 
 即隐藏主题第 1 行第 2 个主题。将电脑日期调到 4 月 1 日，然后打开 PCL，你会发现“启动游戏”的按钮在尝试远离你的鼠标指针，同时右下角冒出一个小白旗。你需要做的，则是拼手速点击 <kbd>启动游戏</kbd> 按钮，并且**不要按小白旗**。如果你成功了，这个隐藏主题便会解锁。
 
-这个主题的特别之处在于，<spam class="rainbow">其颜色会缓慢渐变</spam>。*~~你没有眼花，展示图和文字都有渐变~~*
+这个主题的特别之处在于，<span class="rainbow">其颜色会缓慢渐变</span>。*~~你没有眼花，展示图和文字都有渐变~~*
 
 {% callout type="warning" icon="fa-regular&#32;fa-triangle-exclamation" %}
 在部分电脑上，这个主题可能会带来不小的性能开销。
@@ -131,7 +131,7 @@ excerpt: 始于 2024 年，这篇文章详细讲述了如何解锁 PCL 的各个
 &nbsp;
 
 
-### <spam style="color: transparent; background: linear-gradient(to right, #7349C2, #B83DB8, #BB3E69); background-clip: text;">欧皇彩</spam>
+### <span style="color: transparent; background: linear-gradient(to right, #7349C2, #B83DB8, #BB3E69); background-clip: text;">欧皇彩</span>
 
 > 这就是传说中的欧皇了吧
 
@@ -284,7 +284,7 @@ excerpt: 始于 2024 年，这篇文章详细讲述了如何解锁 PCL 的各个
 &nbsp;
 
 
-### <spam class="rainbow">真・滑稽彩</spam>
+### <span class="rainbow">真・滑稽彩</span>
 
 ![](theme--2.webp)
 

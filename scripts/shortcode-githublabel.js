@@ -1,6 +1,6 @@
 hexo.extend.tag.register("githublabel", ( args ) => {
     return `
-    <spam class="github_label" style="
+    <span class="github_label" style="
         --label-r: ${ args[1] ?? 153 }; 
         --label-g: ${ args[2] ?? 153 }; 
         --label-b: ${ args[3] ?? 153 }; 
@@ -9,6 +9,6 @@ hexo.extend.tag.register("githublabel", ( args ) => {
         --label-l: ${ args[6] ?? 60 };
     ">
     ${ args[0] }
-    </spam>
+    </span>
     `;
 })
