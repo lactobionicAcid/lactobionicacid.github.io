@@ -1,4 +1,4 @@
-- links_category: null
+- links_category: 主题提供
   has_thumbnail: true
   list:
     - name: Theme Redefine
@@ -6,3 +6,10 @@
       avatar: https://redefine.ohevan.com/images/redefine-favicon.svg
       thumbnail: https://assets.ohevan.com/img/210591fbf0fc1576646f418af8373dc7.webp
       description: Redefine 是一款简洁，快速，纯净的 Hexo 主题。
+
+- links_category: 朋友
+  has_thumbnail: false
+  list:
+    - name: rkmingo
+      link: https://space.bilibili.com/378081481
+      avatar: /images/friend/3ea3694bb18a987f.jpg
