@@ -177,7 +177,7 @@ home_banner:
     # Social links
     links:
       - icon: email
-        url: mailto:lactobionicAcid@foxmail.com
+        url: mailto:lactobionicAcid@foxmail.com?subject=%e4%b8%80%e8%88%ac%e4%ba%8b%e9%a1%b9
       - icon: bilibili
         url: https://space.bilibili.com/541279956
       - icon: github # can also be "fa-brands fa-github"
