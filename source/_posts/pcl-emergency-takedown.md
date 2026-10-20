@@ -43,7 +43,8 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 ## 下载
 
 出于方便考虑，本博客将暂时提供 PCL 正式版 2.14.0.0 的下载。
-SHA-256：`5582952ded3b443503f66c23b810802bd20f1a3e847b54d9e09653a825859a36`
+SHA-256（压缩包）：`0835d346cd0f95c1472a3c0655d66e6ca8b7e4494ca0083768e3316f2cd4e7b1`
+SHA-256（exe程序）：`5582952ded3b443503f66c23b810802bd20f1a3e847b54d9e09653a825859a36`
 
 {% button text="PCL&#32;正式版&#32;2.14.0.0" url="/shared_files/PCL%20%e6%ad%a3%e5%bc%8f%e7%89%88%202.14.0.0.zip" target="_blank" icon="fa-solid&#32;fa-download" size="lg" align="center" %}
 由于 PCL 快照版对分发的限制非常严格，本博客将不予提供 PCL 快照版下载。
