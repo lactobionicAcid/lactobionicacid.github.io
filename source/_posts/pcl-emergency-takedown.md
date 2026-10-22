@@ -22,13 +22,19 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 
 ## 影响
 
-- PCL 启动器（目前仅 正式/快照版 2.99.0.0 版本）将不再具有从下载源下载原版 Minecraft 的功能。
+- PCL 启动器（正式版 2.99.0.0 (内部 413.5) / 快照版 2.99.0.0 (内部 414.0)）将不再具有从下载源下载原版 Minecraft 的功能。
   - 受此影响，整合包也将无法正常安装。
+  - ~~一处吐槽：为什么要使用 `2.99` 这样的墓碑版本号……~~
 
 - 其他第三方 Minecraft 启动器可能会考虑跟进该措施。
-  - 目前已知的已跟进该措施的第三方启动器：
-    HMCL *（有相关提交记录但未推送新版本）*
-    PCL <ruby>CE<rt>社区版</rt></ruby> （正式版 2.15.1 及以后）
+  - 目前已知的**已经跟进该措施**的第三方启动器：
+    [Hello! Minecraft Launcher (HMCL)](https://github.com/HMCL-dev/HMCL)（开发版 3.17.0.362）
+    [PCL Community Edition (PCL CE)](https://github.com/PCL-Community/PCL-CE)（正式版 2.15.1）
+    [Zalith Launcher 2](https://github.com/ZalithLauncher/ZalithLauncher2)（2.7.2；有相关回滚记录 [`76588ef`](https://github.com/ZalithLauncher/ZalithLauncher2/commit/76588efb2a16f7a5b64bb6ffddb2e342cc93e9ec) 但未推送新版本）
+
+  - 目前已知的**即将跟进/曾跟进过该措施**的第三方启动器：
+    [Fold Craft Launcher (FCL)](https://github.com/FCL-Team/FoldCraftLauncher)（有相关提交记录 [`a36e1e4`](https://github.com/FCL-Team/FoldCraftLauncher/commit/a36e1e42292d6a67c93be0dafbfdceff01823e71) 但未推送新版本）
+    [Quanta Craft Launcher (QCL)](https://github.com/ALLEN201123/Quanta-Craft-Launcher)（仅 1.5.3）
 
 ## 补救措施
 
@@ -43,11 +49,11 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 - 修改 PCL 文件夹中的 `Setup.ini` 文件，将 `SystemSystemUpdate` 的值改为 `3` 来暂时屏蔽后续更新。
 
 如果你的 PCL 已经更新到无法下载 Minecraft 的版本，由于 PCL 没有回退更新的功能，请从可信来源或从本博客下载 PCL 程序文件。
-**切勿接受陌生人发送的 PCL 程序**，因为此时可能有人趁乱投毒！
+为确保你的数据安全，**切勿贸然接受陌生人发送的 PCL 程序**，因为此时可能有人趁乱投毒！
 
 ## 安全注意
 
-为防止下载到来源不明的 PCL 程序致使电脑中毒，请**务必**在下载 PCL 程序后，校验 PCL 程序的 SHA-256 哈希值，确保 PCL 程序未受到任何篡改。
+为防止下载到来源不明的 PCL 程序致使电脑中毒，请**务必**在下载 PCL 程序后，校验 PCL 程序的 SHA-256 哈希值，以确保 PCL 程序未受到任何篡改。
 
 几个常见 PCL 版本的 SHA-256 哈希值如下（是 **exe 文件**而不是 zip 压缩包的哈希值）：
 
@@ -60,7 +66,7 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 | 正式 2.14.0.0 | `5582952ded3b443503f66c23b810802bd20f1a3e847b54d9e09653a825859a36` |
 | 正式 2.13.1.1 | `30eb93c62fc51ede0898648e67455478a3d5a4f279938ae65aec77b84cb9703f` |
 
-对于 Patch 包：由于 PCL 程序在 Patch 之后 SHA-256 哈希值也可能会发生变化，且 Patch 这一操作也有一定风险，本表不提供 Patch 包的哈希值，**请自行判断是否含毒**。
+对于 Patch 包：由于 PCL 程序在 Patch 之后 SHA-256 哈希值也可能会发生变化，且 Patch 本身存在一定风险，本表不提供 Patch 包的哈希值，**请自行判断是否含毒**。
 
 ## 下载
 
