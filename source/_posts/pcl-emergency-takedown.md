@@ -28,7 +28,7 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 
 - 其他第三方 Minecraft 启动器可能会考虑跟进该措施。
   - 目前已知的**已经跟进该措施**的第三方启动器：
-    [Hello! Minecraft Launcher (HMCL)](https://github.com/HMCL-dev/HMCL)（开发版 3.17.0.362）
+    [Hello! Minecraft Launcher (HMCL)](https://github.com/HMCL-dev/HMCL)（开发版 3.17.0.362；有相关回滚 Pull Request [`#7038`](https://github.com/HMCL-dev/HMCL/pull/7038) 但未推送新版本）
     [PCL Community Edition (PCL CE)](https://github.com/PCL-Community/PCL-CE)（正式版 2.15.1）
     [Zalith Launcher 2](https://github.com/ZalithLauncher/ZalithLauncher2)（2.7.2；有相关回滚记录 [`76588ef`](https://github.com/ZalithLauncher/ZalithLauncher2/commit/76588efb2a16f7a5b64bb6ffddb2e342cc93e9ec) 但未推送新版本）
 
