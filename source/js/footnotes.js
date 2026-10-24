@@ -60,9 +60,6 @@
     const section = document.createElement('section');
     section.className = 'footnotes';
 
-    const divider = document.createElement('hr');
-    section.appendChild(divider);
-
     const list = document.createElement('ol');
     list.className = 'footnotes-list';
 
@@ -97,14 +94,14 @@
     section.appendChild(list);
     placeholder.appendChild(section);
 
-    tippy(document.querySelector('.footnote-ref'), {
+    document.querySelectorAll('.footnote-ref').forEach(ele => { tippy( ele, {
       animation: 'shift-toward',
       arrow: true,
       arrowType: 'round',
       delay: [0, 75],
       duration: [270, 300]
-    })
-  }
+    })});
+  };
 
   renderFootnotes();
 })();
