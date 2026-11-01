@@ -3,7 +3,7 @@ license: cc_by_nc
 title: PCL 下载源紧急下架事件
 abbrlink: 0f61
 date: 2026-10-20 20:45:07
-expires: 2027-10-20 20:45:07
+expires: 2026-11-08 08:00:00
 category: 'PCL 启动器'
 tags:
 thumbnail: /202610/0f61/pcl-takedown.png
@@ -12,20 +12,19 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 
 *[跳转到 PCL 下载](#下载)*
 
-## **悲报**
+## 悲报
 
-10 月 25 日电
-
-龙腾猫跃于 [PCL 2.99.0.1 更新日志](https://www.bilibili.com/opus/1262817983873417220)中宣布，PCL 的 Minecraft 下载功能将永久移除。
+龙腾猫跃于 [PCL 2.99.0.1 更新日志](https://www.bilibili.com/opus/1262817983873417220)中表示 PCL 的 Minecraft 下载功能将永久移除。
 详细原因待公开。
 
 ![](msg1.png)
 
 ## 当前情况概述
 
-*以下信息来自于网络，不完全确保准确性。*
+TL;DR：PCL 在一场风波后爆了；数个与 PCL 长期敌对的组织也前来落井下石。
 
-部分详细信息请前往这个博客 → https://www.lyyweb.top/archives/5g7q9sd6/
+*以下信息来自于网络，不完全确保准确性。*
+*部分详细信息请前往这个博客 → https://www.lyyweb.top/archives/5g7q9sd6/ <!---->*
 
 - 10 月 20 日，由于接到家长举报，龙腾猫跃发布 PCL 2.99.0.0 版本，“临时”紧急下架了 PCL 的 Minecraft 下载功能。{%ref 1 www.bilibili.com/opus/1261020063318671366 %}
   同日，有人诬告 PCL 存在一处“后门”“云控” 。{%ref 2 23&#32;日，龙腾猫跃本人的回应。www.bilibili.com/opus/1262353478882164752 %}
@@ -38,15 +37,15 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 - PCL 启动器（正式版 2.99.0.0 (内部 413.5) ，正式版 2.99.0.1 (内部 415.5) ，快照版 2.99.0.0 (内部 414.0)，快照版 2.99.0.1 (内部 416.0)）将不再具有从下载源下载原版 Minecraft 的功能。
   - 受此影响，整合包也将无法正常安装。
 
-- 其他第三方 Minecraft 启动器可能会考虑跟进该措施。
-  - 目前已知的**已经跟进该措施**的第三方启动器：
-    [Hello! Minecraft Launcher (HMCL)](https://github.com/HMCL-dev/HMCL)（开发版 3.17.0.362；有相关回滚 Pull Request [`#7038`](https://github.com/HMCL-dev/HMCL/pull/7038) 但未推送新版本）
+- 部分第三方 Minecraft 启动器在事件发生时跟进了该措施，但大部分在短时间内撤销了该措施。
+  - 目前已知的**已经跟进该措施**的其他第三方启动器：
     [PCL Community Edition (PCL CE)](https://github.com/PCL-Community/PCL-CE)（正式版 2.15.1）
     [Zalith Launcher 2](https://github.com/ZalithLauncher/ZalithLauncher2)（2.7.2；有相关回滚记录 [`76588ef`](https://github.com/ZalithLauncher/ZalithLauncher2/commit/76588efb2a16f7a5b64bb6ffddb2e342cc93e9ec) 但未推送新版本）
 
-  - 目前已知的**即将跟进/曾跟进过该措施**的第三方启动器：
-    [Fold Craft Launcher (FCL)](https://github.com/FCL-Team/FoldCraftLauncher)（有相关提交记录 [`a36e1e4`](https://github.com/FCL-Team/FoldCraftLauncher/commit/a36e1e42292d6a67c93be0dafbfdceff01823e71) 但未推送新版本）
-    [Quanta Craft Launcher (QCL)](https://github.com/ALLEN201123/Quanta-Craft-Launcher)（仅 1.5.3）
+  - 目前已知的**曾跟进过该措施 / 有相关提交但已回滚**的其他第三方启动器：
+    [Hello! Minecraft Launcher (HMCL)](https://github.com/HMCL-dev/HMCL)（开发版 3.17.0.362）
+    [Quanta Craft Launcher (QCL)](https://github.com/ALLEN201123/Quanta-Craft-Launcher)（1.5.3）
+    [Fold Craft Launcher (FCL)](https://github.com/FCL-Team/FoldCraftLauncher)（[`a36e1e4`](https://github.com/FCL-Team/FoldCraftLauncher/commit/a36e1e42292d6a67c93be0dafbfdceff01823e71) ～ [`8a39ffc`](https://github.com/FCL-Team/FoldCraftLauncher/commit/8a39ffc224aceb3c3c93fe8a050f8eff4823f6cb)，未推送至任何版本）
 
 ## 我该怎么办？
 
@@ -57,10 +56,10 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 
 如果你打开了 PCL，但发现有一个强制更新的弹窗，**不要点击 <kbd>更新 PCL</kbd> 按钮、不要通过 <kbd>ESC</kbd> 等快捷键关闭弹窗**。
 请通过 <kbd>Alt</kbd> <kbd>F4</kbd> 快捷键、从任务栏右键 PCL 图标、或使用任务管理器关闭 PCL 程序，然后：
-- 断开所有网络连接，打开 PCL 程序，然后按上述操作暂时屏蔽后续更新；或
+- 再次打开 PCL 程序，然后按上述操作暂时屏蔽后续更新；或
 - 修改 PCL 文件夹中的 `Setup.ini` 文件，将 `SystemSystemUpdate` 的值改为 `3` 来暂时屏蔽后续更新。
 
-如果你的 PCL 已经更新到无法下载 Minecraft 的版本，由于 PCL 没有回退更新的功能，请从可信来源或从本博客下载 PCL 程序文件。
+如果你的 PCL 已经更新到无法下载 Minecraft 的版本，由于 PCL 没有回退更新的功能，请从可信来源或从本博客下载旧版 PCL 程序文件。
 为确保你的数据安全，**切勿贸然接受陌生人发送的 PCL 程序**，因为此时可能已有大量夹带病毒的 PCL 程序流通。
 
 ## 安全注意
@@ -80,7 +79,10 @@ excerpt: 10 月 20 日，PCL 启动器采取的一系列相关措施，以及其
 | 正式 2.14.0.0 | `5582952ded3b443503f66c23b810802bd20f1a3e847b54d9e09653a825859a36` |
 | 正式 2.13.1.1 | `30eb93c62fc51ede0898648e67455478a3d5a4f279938ae65aec77b84cb9703f` |
 
-对于 Patch 包：由于 PCL 程序在 Patch 之后 SHA-256 哈希值也可能会发生变化，且 Patch 本身存在一定风险，本表不提供 Patch 包的哈希值，**请自行判断是否含毒**。
+对于 Patch / 补丁包：PCL 程序在 Patch 后的哈希值也会发生变化，且极大概率无法在上表中查询到。
+
+由于无法保证 Patch 不会插入恶意代码，且部分 Patch 存在修改主题等**侵权功能**，本博客假设所有的非官方 Patch 都不可信。
+**使用 Patch 的风险请自行承担**。
 
 ## 下载
 
