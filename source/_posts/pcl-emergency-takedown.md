@@ -40,10 +40,10 @@ TL;DR：PCL 在一场风波后爆了；数个与 PCL 长期敌对的组织也前
 - 部分第三方 Minecraft 启动器在事件发生时跟进了该措施，但大部分在短时间内撤销了该措施。
   - 目前已知的**已经跟进该措施**的其他第三方启动器：
     [PCL Community Edition (PCL CE)](https://github.com/PCL-Community/PCL-CE)（正式版 2.15.1）
-    [Zalith Launcher 2](https://github.com/ZalithLauncher/ZalithLauncher2)（2.7.2；有相关回滚记录 [`76588ef`](https://github.com/ZalithLauncher/ZalithLauncher2/commit/76588efb2a16f7a5b64bb6ffddb2e342cc93e9ec) 但未推送新版本）
 
   - 目前已知的**曾跟进过该措施 / 有相关提交但已回滚**的其他第三方启动器：
     [Hello! Minecraft Launcher (HMCL)](https://github.com/HMCL-dev/HMCL)（开发版 3.17.0.362）
+    [Zalith Launcher 2](https://github.com/ZalithLauncher/ZalithLauncher2)（2.7.2）
     [Quanta Craft Launcher (QCL)](https://github.com/ALLEN201123/Quanta-Craft-Launcher)（1.5.3）
     [Fold Craft Launcher (FCL)](https://github.com/FCL-Team/FoldCraftLauncher)（[`a36e1e4`](https://github.com/FCL-Team/FoldCraftLauncher/commit/a36e1e42292d6a67c93be0dafbfdceff01823e71) ～ [`8a39ffc`](https://github.com/FCL-Team/FoldCraftLauncher/commit/8a39ffc224aceb3c3c93fe8a050f8eff4823f6cb)，未推送至任何版本）
 
